@@ -1,0 +1,158 @@
+.clutch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5rem;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+/* ==== Hero ==== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(to bottom, rgba(0,0,0,0.7) 70%, var(--bg) 100%),
+    url("/assets/clutch_bg.jpg") center/cover no-repeat;
+  filter: blur(0px) brightness(0.75); 
+  z-index: 0;
+}
+
+/* ==== Title Animation ==== */
+.title {
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.9) 0%,
+    rgba(255,255,255,0.65) 25%,
+    rgba(255,255,255,0.9) 50%,
+    rgba(255,255,255,0.65) 75%,
+    rgba(255,255,255,0.9) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shineMove 4s linear infinite; 
+  z-index: 1;
+}
+
+@keyframes shineMove {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+.subtitle {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  z-index: 1;
+  opacity: 0.9;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.55); 
+}
+
+.subtitle span {
+  font-weight: bold;
+  background: #fff;
+  color: var(--ink);
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+}
+
+/* ==== Features ==== */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 5rem auto;
+  padding: 0 2rem;
+}
+
+.featureCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: var(--card-radius);
+  backdrop-filter: blur(6px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.featureCard h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 0.8rem; /* space between title and text */
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* separator line */
+  width: 100%;
+}
+
+.featureCard p {
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: 0.85;
+  margin: 0;
+}
+
+.featureCard:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ==== CTA ==== */
+.cta {
+  margin-top: 3rem;
+  text-align: center;
+}
+.cta h2 {
+  margin-bottom: 1.2rem;
+}
+.ctaButton {
+  margin-top: 1.5rem;
+  display: inline-block;
+  background: #fff;
+  color: var(--ink);
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.ctaButton:hover {
+  background: var(--ink);
+  color: var(--fg);
+  transform: scale(1.05);
+}
+
+/* ==== Animations ==== */
+@keyframes shine {
+  0% { background-position: -200%; }
+  100% { background-position: 200%; }
+}
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  100% { opacity: 0.8; }
+}

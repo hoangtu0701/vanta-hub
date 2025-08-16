@@ -1,0 +1,17 @@
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-block: 1.5rem;
+  font-size: 0.875rem;
+  background: transparent;
+  color: inherit;
+}
+
+.inner {
+  max-width: 72rem; 
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
