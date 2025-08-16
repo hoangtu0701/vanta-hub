@@ -13,10 +13,10 @@ export default function HomePage() {
           </p>
           <div className={styles.actions}>
             <Link href="/projects" className={styles["btn-invert"]}>
-              Explore My Work
+              Explore Vanta Projects
             </Link>
             <Link href="/about" className={styles.btn}>
-              About Me
+              About Vanta
             </Link>
           </div>
         </div>
