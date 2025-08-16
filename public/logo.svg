@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="black"></rect>
+  
+  <!-- Left blade, slimmer with slanted top -->
+  <polygon points="25,40 58,52 92,160 76,180 55,160" fill="white"></polygon>
+  
+  <!-- Right blade, slimmer with slanted top -->
+  <polygon points="142,52 175,40 145,160 124,180 108,160" fill="white"></polygon>
+  
+  <!-- Inner razor cut -->
+  <polygon points="87,105 113,105 100,160" fill="black"></polygon>
+</svg>
