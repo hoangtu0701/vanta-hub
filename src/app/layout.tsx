@@ -16,10 +16,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 export const metadata = {
   title: "Vanta Hub",
-  description: "Free, open-source hub for collaborative projects.",
+  description: "Free, open-source hub for banger projects.",
   icons: {
-    icon: "/logo.svg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "Vanta Hub",
     description: "Free, open-source hub for collaborative projects.",
@@ -27,7 +34,7 @@ export const metadata = {
     siteName: "Vanta Hub",
     images: [
       {
-        url: "/logo.svg",
+        url: "/android-chrome-512x512.png",
         width: 512,
         height: 512,
         alt: "Vanta Hub Logo",
@@ -39,6 +46,6 @@ export const metadata = {
     card: "summary",
     title: "Vanta Hub",
     description: "Free, open-source hub for collaborative projects.",
-    images: ["/logo.svg"],
+    images: ["/android-chrome-192x192.png"],
   },
 };
