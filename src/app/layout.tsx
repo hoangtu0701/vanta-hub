@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -9,6 +10,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main>{children}</main>
         <Footer />
+        <Script
+          id="logo-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Vanta Hub",
+              url: "https://vantahub.org",
+              logo: "https://vantahub.org/logo.svg"
+            }),
+          }}
+        />
       </body>
     </html>
   );
@@ -16,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 export const metadata = {
   title: "Vanta Hub",
-  description: "Free, open-source hub for banger projects.",
+  description:   "Vanta Hub — where banger projects meet your advantage. Tools that level you up, not slow you down.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
