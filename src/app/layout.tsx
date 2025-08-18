@@ -44,7 +44,7 @@ export const metadata = {
   manifest: "/site.webmanifest",
   openGraph: {
     title: "Vanta Hub",
-    description: "Free, open-source hub for collaborative projects.",
+    description: "Vanta Hub — where banger projects meet your advantage. Tools that level you up, not slow you down.",
     url: "https://vantahub.org",
     siteName: "Vanta Hub",
     images: [
@@ -60,7 +60,7 @@ export const metadata = {
   twitter: {
     card: "summary",
     title: "Vanta Hub",
-    description: "Free, open-source hub for collaborative projects.",
+    description: "Vanta Hub — where banger projects meet your advantage. Tools that level you up, not slow you down.",
     images: ["/android-chrome-192x192.png"],
   },
 };
