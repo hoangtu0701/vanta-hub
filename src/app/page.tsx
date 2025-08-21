@@ -2,6 +2,23 @@ import Link from "next/link";
 import styles from "./HomePage.module.css";
 
 export default function HomePage() {
+  const projects = [
+    {
+      slug: "clutch",
+      name: "Clutch",
+      number: "01",
+      description:
+        "A real-time AI voice assistant for Counter-Strike 2 — designed to coach, call, and elevate your game.",
+    },
+    {
+      slug: "binger",
+      name: "Binger",
+      number: "02",
+      description:
+        "A synced movie watching experience with chat, video calls, and shared playback. Simple. Seamless. Social.",
+    },
+  ];
+
   return (
     <div className="min-h-[calc(100vh-140px)] flex flex-col">
       {/* Hero Section */}
@@ -25,26 +42,21 @@ export default function HomePage() {
       {/* Project Tiles */}
       <section className={styles.section}>
         <div className="grid md:grid-cols-2 gap-6">
-          <Link href="/projects/clutch" className={styles.tile}>
-            <div className="flex items-center justify-between mb-8">
-              <h3 className="text-3xl md:text-4xl font-extrabold">Clutch</h3>
-              <span>01</span>
-            </div>
-            <p className="opacity-90">
-              A real-time AI voice assistant for Counter-Strike 2 — designed to
-              coach, call, and elevate your game.
-            </p>
-          </Link>
-
-          <Link href="/projects/binger" className={styles.tile}>
-            <div className="flex items-center justify-between mb-8">
-              <h3 className="text-3xl md:text-4xl font-extrabold">Binger</h3>
-              <span>02</span>
-            </div>
-            <p className="opacity-90">
-              A synced movie watching experience with chat, video calls, and shared playback. Simple. Seamless. Social.
-            </p>
-          </Link>
+          {projects.map((project) => (
+            <Link
+              key={project.slug}
+              href={`/projects/${project.slug}`}
+              className={styles.tile}
+            >
+              <div className="flex items-center justify-between mb-8">
+                <h3 className="text-3xl md:text-4xl font-extrabold">
+                  {project.name}
+                </h3>
+                <span>{project.number}</span>
+              </div>
+              <p className="opacity-90">{project.description}</p>
+            </Link>
+          ))}
         </div>
       </section>
     </div>

@@ -1,0 +1,86 @@
+.page {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  max-width: 78rem;
+  margin-inline: auto;
+  padding: 4rem 1.5rem 6rem 1.5rem;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* spacing between cards */
+}
+
+.tile {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--card-radius);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  transform: translateZ(0);
+  box-shadow: 0 0 0 transparent;
+  display: block;
+}
+
+.tile:hover {
+  transform: translateY(-6px) scale(1.015);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.05);
+}
+
+.tileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.tileTitle {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 800;
+}
+
+.tileNumber {
+  font-size: 3rem;
+  font-weight: 900;
+  opacity: 0.2;
+  transition: opacity 0.2s ease;
+}
+
+.tile:hover .tileNumber {
+  opacity: 0.4;
+}
+
+.tileDescription {
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
